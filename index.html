@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Array Of Object</h1>
+    <p>Question 1: We are interested in retrieving only the name of the students and all the names should be in caps.</p>
+    <pre>
+        let studentRecords = [
+    {name: 'Jhon',id: 123 ,marks:98},
+    {name: 'baba',id: 101 ,marks:23},
+    {name: 'yaga',id: 200 ,marks:45},
+    {name: 'wick',id: 115 ,marks:75}
+]
+const nameUpper=studentRecords.map(element=>(element.name.toUpperCase()))
+console.log(nameUpper)
+    </pre>
+    <p>Question 2: Suppose we have the same dataset as above but this time we want to get the details of students who scored more than 50 marks.</p>
+    <pre>
+        let studentRecords = [
+    {name: 'Jhon',id: 123 ,marks:98},
+    {name: 'baba',id: 101 ,marks:23},
+    {name: 'yaga',id: 200 ,marks:45},
+    {name: 'wick',id: 115 ,marks:75}
+]
+const highMark=[]
+ studentRecords.forEach(element=>{
+    if(element.marks>50){
+       highMark.push(element) 
+    }
+})
+console.log(highMark)
+    </pre>
+    <p>Question 3. Retrieve the details of students who scored more than 50 marks and have id greater than 120.</p>
+    <pre>
+        let studentRecords = [
+    {name: 'Jhon',id: 123 ,marks:98},
+    {name: 'baba',id: 101 ,marks:23},
+    {name: 'yaga',id: 200 ,marks:45},
+    {name: 'wick',id: 115 ,marks:75}
+]
+const highIdMarks=[];
+studentRecords.forEach(item=>{
+if(item.id>120 && item.marks>50){
+    highIdMarks.push(item)
+}
+})
+console.log(highIdMarks);
+    </pre>
+    <p>Question 4: Consider the same scenario we have discussed above, but this time we would like to know the sum total of the marks of the students.</p>
+    <pre>
+    let studentRecords = [
+    {name: 'Jhon',id: 123 ,marks:98},
+    {name: 'baba',id: 101 ,marks:23},
+    {name: 'yaga',id: 200 ,marks:45},
+    {name: 'wick',id: 115 ,marks:75}
+]
+let sumOFMarks=0
+studentRecords.map(item=>{
+    sumOFMarks+=item.marks;
+})
+console.log(sumOFMarks)
+    </pre>
+    <p>Question 5: This time we want to get only the names of the students who scored more than 50 marks from the same dataset used above.</p>
+    <pre>
+        let studentRecords = [
+    {name: 'Jhon',id: 123 ,marks:98},
+    {name: 'baba',id: 101 ,marks:23},
+    {name: 'yaga',id: 200 ,marks:45},
+    {name: 'wick',id: 115 ,marks:75}
+]
+let nameOfHigh=[];
+studentRecords.forEach(element=>{
+    if(element.marks>50){
+        nameOfHigh.push(element.name)
+    }
+})
+console.log(nameOfHigh);
+    </pre>
+    <p>Question 6: This time we are required to print the sum of marks of the students with id > 120.</p>
+    <pre>
+        let studentRecords = [
+    {name: 'Jhon',id: 123 ,marks:98},
+    {name: 'baba',id: 101 ,marks:23},
+    {name: 'yaga',id: 200 ,marks:45},
+    {name: 'wick',id: 115 ,marks:75}
+]
+        let highIdHighMarks=0;
+        studentRecords.forEach(element=>{
+            if(element.id>120){
+                highIdHighMarks+=element.marks
+            }
+        })
+        console.log(highIdHighMarks)
+    </pre>
+    <p>Question 7: This time we are required to print the total marks of the students with marks greater than 50 after a grace of 15 marks has been added to those students who scored less than 50.</p>
+    <pre>
+        let studentRecords = [
+        {name: 'Jhon',id: 123 ,marks:98},
+        {name: 'baba',id: 101 ,marks:23},
+        {name: 'yaga',id: 200 ,marks:45},
+        {name: 'wick',id: 115 ,marks:75}
+    ]
+    studentRecords.forEach(element=>{
+        if(element.marks<50){
+            element.marks+=15
+        }
+    })
+    let graceMarks=0;
+    studentRecords.forEach(element=>{
+        if(element.marks>50){
+            graceMarks +=element.marks
+        }
+    })
+    console.log(graceMarks)
+
+</pre>
+    <p>Question 8: Create 6 objects, each object will have name, class, roll no as properties. Store these objects in an array of objects.</p>
+    <pre>
+        function student(a,b,c){
+            this.name = a,
+            this.class = b,
+            this.rollno = c
+        }
+        const stuArr=[]
+        
+        let student1 = new student(1,'jhon',12)
+        let student2 = new student(2,'sown',12)
+        let student3 = new student(3,'wick',12)
+        let student4 = new student(4,'trixi',12)
+        let student5 = new student(5,'taylor',12)
+        let student6 = new student(6,'selena',12)
+        stuArr.push(student1)
+        stuArr.push(student2)
+        stuArr.push(student3)
+        stuArr.push(student4)
+        stuArr.push(student5)
+        stuArr.push(student6)
+        
+        console.log(stuArr);
+    </pre>
+    <script src="./index.js"></script>
+</body>
+</html>
